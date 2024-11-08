@@ -12,7 +12,7 @@ let massMark = 78;
 const heightMark = 1.69;
 let massJohn = 92;
 const heightJohn = 1.95;
-const BMIMark = massMark / (heightMark * heightMark);
+const BMIMark = massMark / (heightMark ** 2);
 const BMIJohn = massJohn / (heightJohn * heightJohn);
 let markHigherBMI;
 
