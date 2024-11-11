@@ -21,48 +21,48 @@ function validateForm() {
 
     //// Reset error messages
     fnameError.textContent = "";
-    lnameError.textContent = "";
-    emailError.textContent = "";
-    genderError.textContent = "";
-    ageError.textContent = "";
-    hobbiesError.textContent = "";
+    lnameError.innerHTML = "";
+    emailError.innerHTML = "";
+    genderError.innerHTML = "";
+    ageError.innerHTML = "";
+    hobbiesError.innerHTML = "";
 
     //Validation fields
 
     let isValid = true;
 
     if (fname === "" || /\d/.test(fname)) {
-        fnameError.textContent =
+        fnameError.innerHTML =
             "Please enter your first name properly.";
         isValid = false;
     }
 
     if (lname === "" || /\d/.test(lname)) {
-        lnameError.textContent =
+        lnameError.innerHTML =
             "Please enter your lastt name properly.";
         isValid = false;
     }
 
     if (email === "" || !email.includes("@")) {
-        emailError.textContent =
+        emailError.innerHTML =
             "Please enter a valid email address.";
         isValid = false;
     }
 
     if (age === "" || isNaN(age)) {
-        ageError.textContent =
+        ageError.innerHTML =
             "Please enter your age in numbers.";
         isValid = false;
     }
 
     if (gender === "") {
-        genderError.textContent =
+        genderError.innerHTML =
             "Please select your gender.";
         isValid = false;
     }
 
     if (hobbies === "") {
-        hobbiesError.textContent =
+        hobbiesError.innerHTML =
             "Please select your hobbies.";
         isValid = false;
     }
