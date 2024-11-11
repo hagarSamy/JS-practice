@@ -23,7 +23,7 @@ function validateForm() {
     fnameError.textContent = "";
     lnameError.textContent = "";
     emailError.textContent = "";
-    gender.textContent = "";
+    genderError.textContent = "";
     ageError.textContent = "";
     hobbiesError.textContent = "";
 
