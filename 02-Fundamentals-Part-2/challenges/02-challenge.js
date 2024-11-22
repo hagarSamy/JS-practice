@@ -49,4 +49,5 @@ if(mark.calcBMI() > john.calcBMI()) {
   winner = mark;
   loser = john;
 };
-console.log(`${winner.fullName}'s BMI (${winner.calcBMI()}) is higher than ${loser.fullName}'s (${loser.calcBMI()})!👻`);
+// calling `bmi` will work only after calling the functin that creates/initiates thit property = calcBMI
+console.log(`${winner.fullName}'s BMI (${winner.bmi}) is higher than ${loser.fullName}'s (${loser.calcBMI()})!👻`);
