@@ -1,0 +1,10 @@
+const printForecast = function(arr) {
+  let str = '';
+  for(let i = 0; i < arr.length; i++) {
+    let x = i + 1;
+   str += `${arr[i]}ºC in ${x} days ... `;
+  }
+  console.log('...' + str);
+}
+const arr = [21, 56, 63];
+printForecast(arr);
