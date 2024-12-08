@@ -5,3 +5,13 @@ body {
   background-color: beige;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+#form {
+  background-color: blue;
+}
+
+.input {
+  margin-bottom: 5px;
+}
+#headdy {
+  margin-bottom: 2px;
+}
