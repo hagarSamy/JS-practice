@@ -7,6 +7,8 @@ body {
 }
 #form {
   background-color: blue;
+  border: 5px double red;
+  width: 300px;
 }
 
 .input {
@@ -14,4 +16,7 @@ body {
 }
 #headdy {
   margin-bottom: 2px;
+}
+.owl {
+  width: 300px;
 }
