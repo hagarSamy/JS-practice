@@ -23,6 +23,7 @@ const reset = function () {
   document.querySelector('.number').style.width = '15rem';
   document.querySelector('.score').textContent = '20';
   displayMessage('Start guessing...');
+  score = 20;
 };
 
 // Handling the CHECK button to check if the guess is equal to or
@@ -45,6 +46,7 @@ document.querySelector('.check').addEventListener('click', function () {
       highScore = score;
       document.querySelector('.highscore').textContent = highScore;
     }
+    score = 20;
   }
   // when number is different from the guess -- higher or lower
   else if (guess !== number) {
