@@ -3,6 +3,8 @@
 //  Selecting elements by ID && class
 const score0El = document.querySelector('#score--0');
 const score1El = document.getElementById('score--1');
+const current1El = document.getElementById('current--1');
+const current0El = document.querySelector('#current--0');
 
 const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
@@ -22,12 +24,14 @@ const reset = function() {
 
   score0El.textContent = 0;
   score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
 
   diceEl.classList.add('hidden');
-  player0El.classList.add("player--active");
-  player1El.classList.remove("player--active");
-  player0El.classList.remove("player--winner");
-  player1El.classList.remove("player-w-inner");
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
 };
 
 reset();
@@ -71,7 +75,7 @@ btnHold.addEventListener("click", function() {
   totalScores[activePlayer] += currentScore;
   document.getElementById(`score--${activePlayer}`).textContent = totalScores[activePlayer];
   // check if total is 100 if yes end game if no switch player
-  if (totalScores[activePlayer] < 100) {
+  if (totalScores[activePlayer] < 10) {
     switchPlayer();
   } else {
     // Finish game
