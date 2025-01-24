@@ -75,7 +75,7 @@ btnHold.addEventListener("click", function() {
   totalScores[activePlayer] += currentScore;
   document.getElementById(`score--${activePlayer}`).textContent = totalScores[activePlayer];
   // check if total is 100 if yes end game if no switch player
-  if (totalScores[activePlayer] < 10) {
+  if (totalScores[activePlayer] < 100) {
     switchPlayer();
   } else {
     // Finish game
