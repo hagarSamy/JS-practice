@@ -301,3 +301,28 @@ const printBookAuthorsCount = function(title, ...authors) {
     console.log(`The book "${title}" has ${authors.length} authors`);
 }
 printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+
+/////////////////////////////Short Circuiting (&& and ||)
+// 5.1 Some of the book objects have the programmingLanguage property, which specifies what programming
+//  language is used in the book, Write a function called hasExamplesInJava that takes a book object from
+//  the books array as an argument. This function should return true if the book uses Java, or a string
+//  'no data available' if it uses other language or no programming language at all.
+const hasExamplesInJava = function(bookObj) {
+    if (bookObj.programmingLanguage && bookObj.programmingLanguage === "Java") {
+        return true;
+    }
+    else {
+        return("no data avialable");
+    }
+    // return (bookObj.programmingLanguage === "Java" || "no data avialable");
+}
+console.log(hasExamplesInJava(books[0]));
+console.log(hasExamplesInJava(books[1]));
+
+// 5.2 Some of the book objects have the onlineContent property, which is either true or 
+// false. Loop over the books array, and for the books that provide online content, 
+// log to the console a string in this format: "${title}" provides online content. Use short-circuiting.
+
+for (let i = 0; i < books.length; i++) {
+    console.log(`"${books[i].title}" provides online content`) &&books[i].onlineContent;
+}
