@@ -324,5 +324,6 @@ console.log(hasExamplesInJava(books[1]));
 // log to the console a string in this format: "${title}" provides online content. Use short-circuiting.
 
 for (let i = 0; i < books.length; i++) {
-    console.log(`"${books[i].title}" provides online content`) &&books[i].onlineContent;
+    books[i].onlineContent && console.log(`"${books[i].title}" provides online content`);
 }
+
