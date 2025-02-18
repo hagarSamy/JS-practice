@@ -333,5 +333,5 @@ for (let i = 0; i < books.length; i++) {
 //  no data about its online content.
 for (let i = 0; i < books.length; i++) {
     // logs result only if val != null || undefined || false
-    books[i].onlineContent && console.log(`"${books[i].title}" provides no data about its online content`);
+    books[i].onlineContent ?? console.log(`"${books[i].title}" provides no data about its online content`);
 }
