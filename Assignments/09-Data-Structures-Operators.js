@@ -374,3 +374,17 @@ for (const book of books) {
   
 };
 console.log(allAuthors);
+
+/* 8.3﻿Use the for-of loop together with Array's entries() method to log each author from allAuthors to the console together with its index.
+Make the index start from 1, instead of 0.
+
+Expected output
+1. Robert Sedgewick
+2. Kevin Wayne
+3. Harold Abelson
+   ...
+15. Cal Newport
+*/
+for (const [index, element] of allAuthors.entries()) {
+  console.log(`${index + 1}. ${element}`);
+};
