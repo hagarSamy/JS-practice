@@ -351,3 +351,10 @@ for (let i = 0; i < books.length; i++) {
   books[i].highlighted &&= !books[i].thirdParty.goodreads.rating < 4.2;
   console.log(books[i].title, books[i].highlighted);
 }
+
+/* Looping Arrays: The for-of Loop﻿
+8.1﻿ Use the for-of loop to loop over the books array and sum the pages of all books. Use the pageSum variable below,
+and the pages property of the book objects */
+let pageSum = 0;
+for (const book of books) pageSum += book.pages;
+console.log(pageSum);
