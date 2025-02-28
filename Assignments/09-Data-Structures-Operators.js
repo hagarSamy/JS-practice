@@ -388,3 +388,23 @@ Expected output
 for (const [index, element] of allAuthors.entries()) {
   console.log(`${index + 1}. ${element}`);
 };
+
+/////////////////////Enhanced Object Literals
+/* 9.1
+Below is the bookData array that contains other arrays. Each inner array consists of the property name (first element), and the value (second element).
+For example, in ['title', 'Computer Networking: A Top-Down Approach'], 'title' is the property name, and 'Computer Networking: A Top-Down Approach' is meantto be the
+value assigned to that property name. Using computed properties, fill the newBook object with the properties and values from the bookData array. The first one is done already.
+ */
+const bookData = [
+  ['title', 'Computer Networking: A Top-Down Approach'],
+  ['author', ['James F. Kurose', 'Keith W. Ross']],
+  ['publisher', 'Addison Wesley'],
+];
+
+// Do the rest
+const newBook = {
+  [bookData[0][0]]: bookData[0][1],
+  [bookData[1][0]]: bookData[1][1],
+  [bookData[2][0]]: bookData[2][1],
+};
+console.log(newBook);
