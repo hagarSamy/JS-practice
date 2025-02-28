@@ -408,3 +408,12 @@ const newBook = {
   [bookData[2][0]]: bookData[2][1],
 };
 console.log(newBook);
+
+// 9.2 Below is the pages variable. Add it as a property of the newBook2 object. Use the shorter way.
+const pages = 880;
+const newBook2 = {
+  title: 'The C Programming Language',
+  author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
+  pages,
+};
+console.log(newBook2);
