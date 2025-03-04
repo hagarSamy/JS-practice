@@ -450,3 +450,8 @@ for (let [index, value] of Object.values(books[0].thirdParty.goodreads).entries(
   entries[index].push(value);
 };
 console.log(entries);
+
+// 11.3﻿ Use the Object.entries() method on the thirdParty.goodreads property of the first book 
+// from the books array. Assign the returned value to the variable called entries2.
+const entries2 = Object.entries(books[0].thirdParty.goodreads);
+console.log(entries2);
