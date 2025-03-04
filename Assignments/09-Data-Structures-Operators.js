@@ -455,3 +455,6 @@ console.log(entries);
 // from the books array. Assign the returned value to the variable called entries2.
 const entries2 = Object.entries(books[0].thirdParty.goodreads);
 console.log(entries2);
+
+// 11.4﻿ Log the entries and entries2 variables to the console, and compare them. They should look the same.
+/* already done above */
