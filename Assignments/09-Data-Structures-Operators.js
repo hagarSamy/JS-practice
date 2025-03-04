@@ -439,3 +439,14 @@ for (let key of Object.keys(books[0].thirdParty.goodreads)) {
   entries.push([key]);
 };
 console.log(entries);
+
+// 11.2﻿ The Object.values() method returns an array, which means you can call the Array's entries() 
+// method on it, for example, Object.entries(books[0].thirdParty.goodreads).entries(). 
+// The Array's entries() method returns [index, value] arrays for each element in the array.
+// Use the for-of loop together with the Object.values() method and Array's entries() method to loop 
+// over thirdParty.goodreads property of the first book from the books array.
+// Push each value to the appropriate inner array in the entries array (use index from entries()).
+for (let [index, value] of Object.values(books[0].thirdParty.goodreads).entries()) {
+  entries[index].push(value);
+};
+console.log(entries);
