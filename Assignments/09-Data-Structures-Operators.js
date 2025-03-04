@@ -424,7 +424,18 @@ console.log(newBook2);
 // (array) or undefined (if the keywords property doesn't exist). It shouldn't throw an error. Use optional chaining for that.
 
 getFirstKeyword = function(book) {
-  return book.keywords?.[0] || "undefined";
+  return book?.keywords?.[0] || "undefined";
 }
 console.log(getFirstKeyword(books[0]));
 console.log(getFirstKeyword(books[newBook2]));
+
+//////////////////Looping Objects: Object Keys, Values and Entries
+// 11.1﻿ Below is the entries variable that stores an empty array. Use the for-of loop together with the Object.keys() method to loop over the thirdParty.goodreads
+//  property (array) of the first book object from the books array. For each key, push a new array that contains that key to the entries array.
+// In the end, the entries array should be filled with arrays containing keys:
+// [['rating'], ['ratingsCount'], ['reviewsCount'], ['fiveStartRatingCount'], ['oneStartRatingCount']]
+const entries = [];
+for (let key of Object.keys(books[0].thirdParty.goodreads)) {
+  entries.push([key]);
+};
+console.log(entries);
