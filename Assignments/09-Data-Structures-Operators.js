@@ -479,3 +479,11 @@ uniqueKeywords.add('science');
 
 // 12.4 Delete 'business' from the uniqueKeywords set.
 uniqueKeywords.delete('business');
+
+// 12.5 Create an array out of the uniqueKeywords set, and assign it to the uniqueKeywordsArr variable.
+const uniqueKeywordsArr = [...uniqueKeywords];
+console.log(uniqueKeywordsArr);
+
+// 12.6 Delete all items from the uniqueKeywords set.
+uniqueKeywords.clear();
+console.log(uniqueKeywords);
