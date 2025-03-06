@@ -476,4 +476,6 @@ const uniqueKeywords = new Set(allKeywords);
 // 12.3﻿ Add two more keywords to the uniqueKeywords set, for example, 'coding' and 'science'
 uniqueKeywords.add('coding');
 uniqueKeywords.add('science');
-console.log(uniqueKeywords);
+
+// 12.4 Delete 'business' from the uniqueKeywords set.
+uniqueKeywords.delete('business');
