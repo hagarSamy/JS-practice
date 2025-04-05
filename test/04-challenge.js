@@ -172,3 +172,40 @@ for (const [k, v] of gameEvents) {
     console.log(`[FIRST HALF] ${k}: ${v}`)
   } else console.log(`[SECOND HALF] ${k}: ${v}`)
 };
+
+
+//////////////////////////////Coding CHallenge 04 orrrrrrr #7
+/*
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase. The input will come from a textarea inserted into the DOM (see code below to 
+insert the elements), and conversion will happen when the button is pressed. 
+Test data (pasted to textarea, including spaces): 
+underscore_case 
+first_name 
+Some_Variable  
+calculate_AGE 
+delayed_departure 
+Should produce this output (5 separate console.log outputs): 
+underscoreCase      ✅ 
+firstName           ✅✅ 
+someVariable        ✅✅✅ 
+calculateAge        ✅✅✅✅ 
+delayedDeparture    ✅✅✅✅✅ */
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function() {
+  const text = document.querySelector('textarea').value;
+  const stats = text.split('\n');
+  let sep = '';
+  let s = '';
+  let cnt = 0;
+  for (let stat of stats) {
+    cnt++;
+    s = stat.toLowerCase();
+    sep = s.split('_');
+    console.log((sep[0] + sep[1].replace(sep[1][0], sep[1][0].toUpperCase())).padEnd(20, " ") + '✅'.repeat(cnt));
+  }
+});
+
+
