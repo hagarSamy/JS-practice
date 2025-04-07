@@ -519,3 +519,88 @@ for(let [key, value] of firstBookMap) {
   }
 }
 console.log(firstBookMap);
+
+//////////////////////////////  Strings
+// 15.1﻿ Take the ISBN property of the first book from the books array, and log to the console characters at index 6, 4, 9 and 8. 
+// Use bracket notation to access individual characters.
+const isbn = books[0].ISBN;
+console.log(isbn);
+console.log(isbn[6], isbn[4], isbn[9], isbn[8]);
+
+// 15.2﻿ Below is the quote variable that stores a string. Find the index of the word 'chess', and log it to the console.
+const quote = 'A computer once beat me at chess, but it was no match for me at kick boxing';
+console.log(quote.indexOf('chess'));
+
+// 15.3﻿ Extract the word "boxing" from the same quote string, and log it to the console.
+console.log(quote.slice(-6));
+
+// 15.4﻿ Some authors are noted as "(Contributor)", for example "Julie Sussman (Contributor)". Create a function called isContributor that takes an author's name as an
+//  argument, and returns either true (if he's a contributor) of false (if he's not a contributor). The string "(Contributor)" is always the last part of the author's name string.
+const isContributor = function(name) {
+  if (name.slice(-13) === '(Contributor)') return true;
+  return false;
+};
+
+console.log(isContributor('Julie Sussman (Contributor)'));
+console.log(isContributor('Robert Sedgewick'));
+
+// 16.1﻿ Write a function called normalizeAuthorName that takes an author's name (string) as an argument, and returns the same string, but the first name and last name 
+// are capitalized, and the "(Contributor)" part is removed (if exists)
+const normalizeAuthorName = function(authNmae) {
+  let newName = authNmae.replace('(Contributor)', '').trim().toLowerCase();
+  newName = newName.split(' ');
+  console.log(newName[0].replace(newName[0][0], newName[0][0].toUpperCase()) + 
+  ' ' + newName[1].replace(newName[1][0], newName[1][0].toUpperCase()));
+};
+normalizeAuthorName('  JuliE sussMan (Contributor)');
+
+// 16.2﻿ Take the title of the second book (books[1]) from the books array, and replace the word "Programs" with "Software". Assign the new string to the newBookTitle variable.
+const book2Title = books[1].title;
+const newBookTitle = book2Title.replace('Programs', 'Software');
+
+// 16.3﻿ Write a function called logBookTheme that takes book's title (string), and logs to the console:
+// "This book is about computers" if the title starts with the word "computer",
+// "This book is about algorithms and data structures" if the title includes both the "algorithms" and "structures" words,
+// and, "This book is about some systems, but definitely not about operating systems" if the title ends with the word "system" or "systems", but doesn't include the word "operating".
+// The title may contain both small and capital letters.
+
+const logBookTheme = function(title) {
+  title = title.toLowerCase();
+  if (title.startsWith('computer')) console.log('This book is about computers');
+  if (title.includes('algorithms') && title.includes('structures')) console.log('This book is about algorithms and data structures');
+  if((title.endsWith('system') || title.endsWith('systems')) && !title.includes('operating')) console.log('This book is about some systems, but definitely not about operating systems');
+};
+
+// 17.2﻿ Now, the opposite. Each book from the books array has the keywords property. Write a function called getKeywordsAsString that takes the books array as an 
+// argument, collects keywords from each book, removes duplicates, and then joins them to create a single string where keywords are separated by a semicolon.
+const getKeywordsAsString = function(bookies) {
+  const keyWords = [];
+  for (const bookie of bookies) {
+    for(const keyword of bookie.keywords) {
+      if (!keyWords.includes(keyword)) keyWords.push(keyword);
+    }
+  }
+  console.log(keyWords.join(';'));
+};
+
+getKeywordsAsString(books);
+
+// 17.3﻿ Below is the bookChapters array that contains inner arrays. Each inner array consists of a chapter's title, and the number of a page, for example, in 
+// ['The Basics', 14], 'The Basics' is the chapter's title, and 14 is the number of a page. Write a function called logBookChapters that takes an array of arrays 
+// (like bookChapters) as an argument, and logs each chapter's name to the console together with the page number. The page number should be separated from the 
+// chapter's name with underscores (take a look at the example below). Use the padEnd method.
+// Expected output:
+// The Basics__________ 14
+// Sorting_____________ 254
+// Searching___________ 372
+// Graphs______________ 526
+// Strings_____________ 706
+const bookChapters = [['The Basics', 14], ['Sorting', 254], ['Searching', 372], ['Graphs', 526], ['Strings', 706]];
+
+const logBookChapters = function(arrays) {
+  for (const [ chTitle, page ] of arrays) {
+    console.log(`${chTitle.padEnd(20, '_')}  ${page}`);
+  }
+}
+
+logBookChapters(bookChapters);
