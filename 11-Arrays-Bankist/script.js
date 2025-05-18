@@ -50,16 +50,35 @@ TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 GOOD LUCK 😀
 */
 
-const calcAverageHumanAge = function(ages) {
-  const humanAge = ages.map(dogAge => dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4);
-  console.log(humanAge);
-  const adultAvg = humanAge.filter(dogHuAge => dogHuAge >= 18).reduce((acc, curr, i, arr) => acc + curr / arr.length , 0);
-  console.log(adultAvg);
-};
+// const calcAverageHumanAge = function(ages) {
+//   const humanAge = ages.map(dogAge => dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4);
+//   console.log(humanAge);
+//   const adultAvg = humanAge.filter(dogHuAge => dogHuAge >= 18).reduce((acc, curr, i, arr) => acc + curr / arr.length , 0);
+//   console.log(adultAvg);
+// };
 
 const testData1 = [5, 2, 4, 1, 15, 8, 3];
 const testData2 = [16, 6, 10, 5, 6, 1, 4];
-console.log(testData1);
-calcAverageHumanAge(testData1);
-console.log(testData2);
-calcAverageHumanAge(testData2);
+// console.log(testData1);
+// calcAverageHumanAge(testData1);
+// console.log(testData2);
+// calcAverageHumanAge(testData2);
+
+///////////////////////////////////////
+// Coding Challenge #3
+/* 
+Rewrite the 'calcAverageHumanAge' function from the previous challenge, but this time as an arrow function, and using chaining!
+TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
+TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
+
+GOOD LUCK 😀
+*/
+
+const calcAverageHumanAge = function(ages) {
+  const adultAvg = ages.map(dogAge => dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4)
+  .filter(dogHuAge => dogHuAge >= 18)
+  .reduce((acc, curr, i, arr) => acc + curr / arr.length , 0);
+};
+
+console.log(calcAverageHumanAge(testData1));
+console.log(calcAverageHumanAge(testData2));
